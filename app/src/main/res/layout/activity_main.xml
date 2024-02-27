@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            app:lottie_rawRes="@raw/header"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ToDo List"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="5dp"
+        android:elevation="7dp"
+        android:backgroundTint="#F16378"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <EditText
+        android:textColor="@color/white"
         android:id="@+id/editTextNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your note"
+        android:hint="Enter your Tasks"
         android:padding="16dp" />
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:layout_gravity="center"
@@ -18,9 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextNote"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        style="?attr/materialButtonOutlinedStyle"
         android:text="Add" />
 
     <ScrollView
@@ -45,9 +78,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Completed Tasks"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginBottom="16dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"/>
 

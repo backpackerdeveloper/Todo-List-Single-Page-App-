@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.airbnb.lottie.LottieAnimationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     private fun addNoteToLayout(noteText: String) {
         val noteView = layoutInflater.inflate(R.layout.note_layout, null)
         val textViewNote: TextView = noteView.findViewById(R.id.textViewNote)
-        val buttonDelete: Button = noteView.findViewById(R.id.buttonDelete)
+        val buttonDelete: LottieAnimationView = noteView.findViewById(R.id.animationView)
         val checkBoxComplete: CheckBox = noteView.findViewById(R.id.checkBoxComplete)
 
         textViewNote.text = noteText
@@ -97,7 +98,7 @@ class MainActivity : AppCompatActivity() {
         completedTasksSet?.forEach { taskText ->
             val noteView = layoutInflater.inflate(R.layout.note_layout, null)
             val textViewNote: TextView = noteView.findViewById(R.id.textViewNote)
-            val buttonDelete: Button = noteView.findViewById(R.id.buttonDelete)
+            val buttonDelete: Button = noteView.findViewById(R.id.animationView)
             val checkBoxComplete: CheckBox = noteView.findViewById(R.id.checkBoxComplete)
 
             textViewNote.text = taskText
